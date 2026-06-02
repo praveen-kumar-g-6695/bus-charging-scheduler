@@ -5,10 +5,6 @@ covers the scheduling approach, the data model, the future changes the design
 anticipates, and worked code examples for the two things the system is meant to
 make trivial: **changing a weight** and **adding a rule**.
 
-> A longer, blow-by-blow design journal (every decision as it was made, rejected
-> alternatives, benchmark numbers) is kept separately in `ARCHITECTURE_private.md`.
-> This file is the clean, reviewer-facing summary.
-
 ---
 
 ## 1. The problem in one line
