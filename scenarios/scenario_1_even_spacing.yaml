@@ -1,0 +1,51 @@
+name: "Scenario 1 - Even spacing"
+description: >
+  Buses depart every 15 minutes in each direction starting 19:00. Baseline case.
+reference_time: "19:00"
+
+route:
+  name: "Bengaluru-Kochi Highway"
+  origin: "Bengaluru"
+  destination: "Kochi"
+  total_length_km: 540
+  stops:
+    - station: "A"
+      position_km: 100
+    - station: "B"
+      position_km: 220
+    - station: "C"
+      position_km: 320
+    - station: "D"
+      position_km: 440
+
+weights:
+  individual: 1.0
+  operator: 1.0
+  overall: 1.0
+
+fleet_defaults:
+  range_km: 240
+  speed_kmph: 60
+
+# direction: forward = Bengaluru->Kochi, reverse = Kochi->Bengaluru
+trips:
+  - { bus_id: "bus-BK-01", operator: "kpn",      direction: "forward", departure: "19:00" }
+  - { bus_id: "bus-BK-02", operator: "freshbus", direction: "forward", departure: "19:15" }
+  - { bus_id: "bus-BK-03", operator: "flixbus",  direction: "forward", departure: "19:30" }
+  - { bus_id: "bus-BK-04", operator: "kpn",      direction: "forward", departure: "19:45" }
+  - { bus_id: "bus-BK-05", operator: "freshbus", direction: "forward", departure: "20:00" }
+  - { bus_id: "bus-BK-06", operator: "flixbus",  direction: "forward", departure: "20:15" }
+  - { bus_id: "bus-BK-07", operator: "kpn",      direction: "forward", departure: "20:30" }
+  - { bus_id: "bus-BK-08", operator: "freshbus", direction: "forward", departure: "20:45" }
+  - { bus_id: "bus-BK-09", operator: "flixbus",  direction: "forward", departure: "21:00" }
+  - { bus_id: "bus-BK-10", operator: "kpn",      direction: "forward", departure: "21:15" }
+  - { bus_id: "bus-KB-01", operator: "freshbus", direction: "reverse", departure: "19:00" }
+  - { bus_id: "bus-KB-02", operator: "flixbus",  direction: "reverse", departure: "19:15" }
+  - { bus_id: "bus-KB-03", operator: "kpn",      direction: "reverse", departure: "19:30" }
+  - { bus_id: "bus-KB-04", operator: "freshbus", direction: "reverse", departure: "19:45" }
+  - { bus_id: "bus-KB-05", operator: "flixbus",  direction: "reverse", departure: "20:00" }
+  - { bus_id: "bus-KB-06", operator: "kpn",      direction: "reverse", departure: "20:15" }
+  - { bus_id: "bus-KB-07", operator: "freshbus", direction: "reverse", departure: "20:30" }
+  - { bus_id: "bus-KB-08", operator: "flixbus",  direction: "reverse", departure: "20:45" }
+  - { bus_id: "bus-KB-09", operator: "kpn",      direction: "reverse", departure: "21:00" }
+  - { bus_id: "bus-KB-10", operator: "freshbus", direction: "reverse", departure: "21:15" }

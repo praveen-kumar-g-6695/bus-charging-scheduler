@@ -1,0 +1,39 @@
+# Ruff configuration for the Bus Charging Scheduler production app (app/ package).
+# Run from this directory:
+#   uv run ruff format .
+#   uv run ruff check --fix .
+
+# Hard line-length limit: no line may exceed 100 characters.
+line-length = 100
+target-version = "py310"
+
+# Only lint our application package and entry point, not the learning scripts.
+include = ["app/**/*.py", "main_prod.py"]
+
+[lint]
+# A pragmatic, strict-but-sane rule set.
+select = [
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "F",    # pyflakes (unused imports/vars, undefined names)
+    "I",    # isort (import ordering)
+    "N",    # pep8-naming
+    "UP",   # pyupgrade (modern syntax)
+    "B",    # flake8-bugbear (likely bugs)
+    "C4",   # flake8-comprehensions
+    "SIM",  # flake8-simplify
+    "D",    # pydocstyle (docstrings)
+]
+
+ignore = [
+    "D203",  # one-blank-line-before-class (conflicts with D211)
+    "D213",  # multi-line-summary-second-line (conflicts with D212)
+]
+
+[lint.pydocstyle]
+# Google-style docstrings everywhere.
+convention = "google"
+
+[format]
+quote-style = "double"
+indent-style = "space"

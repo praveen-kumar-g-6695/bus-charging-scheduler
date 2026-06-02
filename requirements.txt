@@ -1,0 +1,7 @@
+# Runtime dependencies for the Streamlit UI (read by Streamlit Community Cloud).
+# The web app only needs these three: ortools is used solely by the offline
+# benchmark oracle, not by the scheduling/UI path, so it is intentionally omitted
+# here to keep the cloud build lean.
+streamlit>=1.30
+pydantic>=2.0
+pyyaml>=6.0
